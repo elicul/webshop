@@ -1,5 +1,6 @@
 ﻿using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
+using System;
 
 namespace Webshop.Models
 {
@@ -64,10 +65,20 @@ namespace Webshop.Models
 
     public class RegisterViewModel
     {
-        
+
+        [Required]
+        [MaxLength(100)]
+        [Display(Name = "First Name")]
+        public string FirstName { get; set; }
+
+        [Required]
+        [MaxLength(100)]
+        [Display(Name = "Last Name")]
+        public string LastName { get; set; }
+
         [Required]
         [Display(Name = "Username")]
-        public string Username { get; set; }
+        public string UserName { get; set; }
         
         [Required]
         [EmailAddress]
